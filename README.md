@@ -1,2 +1,2 @@
 # Projeto_IFarma
-Projeto discplina de Desenovlvimento de Software Viaul
+Projeto discplina de Desenovlvimento de Software Visual
