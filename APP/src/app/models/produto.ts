@@ -4,7 +4,7 @@ export interface Produto {
     idProduto: number;
     precoProduto: number;
     formaProduto: {};
-    descontoProduto: string;
+    descontoProduto: number;
     idFarmacia: number;
 
 }
