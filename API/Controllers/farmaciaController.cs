@@ -9,7 +9,7 @@ namespace API.Controllers
     {
         //POST: api/farmacia/criar
         [HttpPost]
-        [Route("criar")]
+        [Route("cadastrar")]
         /*public IActionResult Criar([FromBody] Farmacia farmacia)
         {
             _context.Farmacias.Add(farmacia);
