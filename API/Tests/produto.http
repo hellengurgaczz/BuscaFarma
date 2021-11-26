@@ -1,0 +1,18 @@
+### Cadastrar produto
+POST https://localhost:5001/api/produto/cadastrar
+Content-Type: application/json
+
+{
+    "id": 1,
+ 
+}
+
+### Listar produtos
+GET https://localhost:5001/api/produto/listar
+Content-Type: application/json
+
+
+### Buscar produto por nome
+GET https://localhost:5001/api/produto/buscarProduto/yazFlex
+Content-Type: application/json
+

@@ -8,3 +8,12 @@ Content-Type: application/json
     "EnderecoFarmacia": "Rua José Loreiro, 100",
     "TelefoneFarmacia": 32868589
 }
+
+### Listar farmácias
+GET https://localhost:5001/api/farmacia/listar
+Content-Type: application/json
+
+### Buscar farmácia por nome
+GET https://localhost:5001/api/farmacia/buscarFarmacia/nissei
+Content-Type: application/json
+
