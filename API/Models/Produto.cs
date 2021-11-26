@@ -1,13 +1,17 @@
+using System;
+
 namespace API.Models
 {
     public class Produto
     {
+        public Produto() => criadoEm = DateTime.Now;
+        public int id { get; set; }
         public string nomeProduto { get; set; }
-        public int idProduto { get; set; }
         public double precoProduto { get; set; }
         public string formaProduto { get; set; }
         public int descontoProduto { get; set; }
         public int idFarmacia { get; set; }
+        public DateTime criadoEm { get; set; }
 
     }
 }
