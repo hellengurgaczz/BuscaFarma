@@ -4,12 +4,12 @@
     </h1>
     <h2>O menor caminho para aumentar sua saúde!</h2>
 
-    <input type="text" placeholder="Pesquise aqui seu medicamento">
-    <button>Pesquisar</button>
+    <input type="text" name="pesquisaMedicamento" placeholder="Pesquise aqui seu medicamento">
+    <!-- <button routerLink="/produto/listar/{{produto.nomeProduto}}">Pesquisar</button> -->
     <br>
 
     <select>
-        <option value="Selecione">Ordenar por</option>
+        <option value=" Selecione">Ordenar por</option>
         <option value="Menor preço">Menor preço</option>
         <option value="Maior preço">Maior preço</option>
     </select>
@@ -26,9 +26,17 @@
         <!-- <option *ngFor="let x.forma of x.formas">
 
         </option> -->
+
     </select>
 
-    <app-listar-produto></app-listar-produto>
+
+    <br>
+    <a routerLink="/produto/cadastrar">Cadastrar produto</a><br>
+    <a routerLink="/farmacia/cadastrar">Cadastrar farmácia</a><br>
+    <a routerLink="/usuario/cadastrar">Cadastre-se</a>
+
+
+
 
     <router-outlet></router-outlet>
 </div>

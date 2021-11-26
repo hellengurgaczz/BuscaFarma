@@ -1,7 +1,8 @@
-import { ListarProdutoComponent } from './components/listar-produto/listar-produto.component';
-import { CadastrarUsuarioComponent } from './components/cadastrar-usuario/cadastrar-usuario.component';
-import { CadastrarProdutoComponent } from './components/cadastrar-produto/cadastrar-produto.component';
-import { CadastrarFarmaciaComponent } from './components/cadastrar-farmacia/cadastrar-farmacia.component';
+import { CadastrarFarmaciaComponent } from './components/views/cadastrar-farmacia/cadastrar-farmacia.component';
+import { CadastrarProdutoComponent } from './components/views/cadastrar-produto/cadastrar-produto.component';
+import { CadastrarUsuarioComponent } from './components/views/cadastrar-usuario/cadastrar-usuario.component';
+import { ListarProdutoComponent } from './components/views/listar-produto/listar-produto.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

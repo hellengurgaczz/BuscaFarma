@@ -1,0 +1,29 @@
+<div id="nomeProduto">
+    <label for="nomeProduto">Nome do produto: </label>
+    <input type="text" name="nomeProduto" [(ngModel)]="nomeProduto">
+</div>
+
+<div id="precoProduto">
+    <label for="precoProduto">Preço do produto: </label>
+    <input type="text" name="precoProduto" [(ngModel)]="precoProduto">
+</div>
+
+<div id="formaProduto">
+    <label for="formaProduto">Forma do produto: </label>
+    <select name="formaProduto" multiple="3" [(ngModel)]="formaProduto">Selecione a forma do produto
+        <option value="comprimido">Comprimido</option>
+        <option value="gotas">Gotas</option>
+    </select>
+</div>
+
+<div id="descontoProduto">
+    <label for="descontoProduto">Desconto do produto (em %): </label>
+    <input name="descontoProduto" [(ngModel)]="descontoProduto">
+</div>
+
+<div id="nomeFarmacia">
+    <label for="nomeFarmacia">Farmácia: </label>
+    <input name="nomeFarmacia" [(ngModel)]="nomeFarmacia">
+</div>
+
+<button (click)="cadastrarProduto()">Cadastrar produto na minha farmácia</button>

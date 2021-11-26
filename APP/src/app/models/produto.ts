@@ -1,10 +1,10 @@
 export interface Produto {
 
     nomeProduto: string;
-    idProduto: number;
+    idProduto?: number;
     precoProduto: number;
     formaProduto: {};
     descontoProduto: number;
-    idFarmacia: number;
+    nomeFarmacia: string;
 
 }
