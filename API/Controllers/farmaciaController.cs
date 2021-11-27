@@ -31,15 +31,36 @@ namespace API.Controllers
         //GET: api/produto/buscarFarmacia/{nome}
         [HttpGet]
         [Route("buscarFarmacia/{nomeFarmacia}")]
-        public IActionResult GetById([FromRoute] string nomeFarmacia)
+        public IActionResult GetByName([FromRoute] string nomeFarmacia)
         {
-            Farmacia farmacia = _context.Farmacias.Find(nomeFarmacia);
+            Farmacia farmacia = _context.Farmacias.FirstOrDefault(
+                farmacia => farmacia.NomeFarmacia == nomeFarmacia
+            );
             if (farmacia == null)
             {
                 return NotFound();
             }
             return Ok(farmacia);
         }
+
+        //DELETE: api/farmacia/deletar
+        [HttpDelete]
+        [Route("deletarFarmacia/{nomeFarmacia}")]
+        public IActionResult Delete([FromRoute] string NomeFarmacia)
+        {
+            Farmacia farmacia = _context.Farmacias.FirstOrDefault
+            (
+                farmacia => farmacia.NomeFarmacia == NomeFarmacia
+            );
+            if (farmacia == null)
+            {
+                return NotFound();
+            }
+            _context.Farmacias.Remove(farmacia);
+            _context.SaveChanges();
+            return Ok(_context.Produtos.ToList());
+        }
+
 
         //PUT: api/farmacia/atualizar
         [HttpPut]

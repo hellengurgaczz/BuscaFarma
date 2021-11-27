@@ -3,13 +3,11 @@ POST https://localhost:5001/api/produto/cadastrar
 Content-Type: application/json
 
 {
-    "Id": 7,
+    "Id": 2,
     "NomeProduto": "YazFlex",
     "PrecoProduto": 33.5,
     "DescontoProduto": 0,
-    "Farmacia":{
-        "Id": 5
-    } 
+    "FarmaciaId": 1 
 }
 
 ### Listar produtos
@@ -20,6 +18,16 @@ Content-Type: application/json
 ### Buscar produto por nome
 GET https://localhost:5001/api/produto/buscarProduto/YazFlex
 Content-Type: application/json
+
+### Atualizar produto
+PUT https://localhost:5001/api/produto/atualizarProduto/YazFlex
+Content-Type: application/json
+
+{
+    "Id": 2,
+    "NomeProduto": "YazFlex",
+    "PrecoProduto": 72.90
+}
 
 ### Deletar produto pelo nome
 DELETE https://localhost:5001/api/produto/deletarProduto/YazFlex

@@ -3,7 +3,7 @@ POST https://localhost:5001/api/farmacia/cadastrar
 Content-Type: application/json
 
 {
-    "Id": 5,
+    "Id": 1,
     "NomeFarmacia" : "Nissei",
     "EnderecoFarmacia": "Rua José Loreiro, 100",
     "TelefoneFarmacia": 32868589
@@ -16,4 +16,18 @@ Content-Type: application/json
 ### Buscar farmácia por nome
 GET https://localhost:5001/api/farmacia/buscarFarmacia/Nissei
 Content-Type: application/json
+
+### Atualizar farmacia
+PUT https://localhost:5001/api/farmacia/atualizarFarmacia/Nissei
+Content-Type: application/json
+
+{
+    "Id": 1,
+    "NomeFarmacia": "Nissei - Sitio Cercado",
+    "TelefoneFarmacia": 4132862589
+}
+
+
+### Deletar farmácia pelo nome
+DELETE https://localhost:5001/api/farmacia/deletarFarmacia/Nissei
 

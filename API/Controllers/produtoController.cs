@@ -35,7 +35,7 @@ namespace API.Controllers
         //GET: api/produto/buscarProduto/{nome}
         [HttpGet]
         [Route("buscarProduto/{nomeProduto}")]
-        public IActionResult GetById([FromRoute] string NomeProduto)
+        public IActionResult getByName([FromRoute] string NomeProduto)
         {
 
             Produto produto = _context.Produtos.FirstOrDefault
@@ -49,7 +49,7 @@ namespace API.Controllers
             return Ok(produto);
         }
 
-        //DELETE: api/produto/deletar/
+        //DELETE: api/produto/deletar
         [HttpDelete]
         [Route("deletarProduto/{nomeProduto}")]
         public IActionResult Delete([FromRoute] string NomeProduto)
@@ -67,14 +67,14 @@ namespace API.Controllers
             return Ok(_context.Produtos.ToList());
         }
 
-        //PUT: api/produto/atualizar
+        //PUT: api/produto/atualizarProduto
         [HttpPut]
-        [Route("atualizar")]
-        public IActionResult Update([FromBody] Produto produto)
+        [Route("atualizarProduto")]
+        public IActionResult Update([FromBody] Produto NomeProduto)
         {
-            _context.Produtos.Update(produto);
+            _context.Produtos.Update(NomeProduto);
             _context.SaveChanges();
-            return Ok(produto);
+            return Ok(NomeProduto);
         }
 
     }
