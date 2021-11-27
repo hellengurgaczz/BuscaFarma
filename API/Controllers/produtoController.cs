@@ -2,6 +2,7 @@ using System.Linq;
 using API.Data;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -20,6 +21,7 @@ namespace API.Controllers
 
         public IActionResult Create([FromBody] Produto produto)
         {
+            produto.Farmacia = _context.Farmacias.Find(produto.Farmacia.Id);
             _context.Produtos.Add(produto);
             _context.SaveChanges();
             return Created("", produto);
@@ -28,15 +30,17 @@ namespace API.Controllers
         //GET: api/listar/produto
         [HttpGet]
         [Route("listar")]
-        public IActionResult List() => Ok(_context.Produtos.ToList());
+        public IActionResult List() => Ok(_context.Produtos.Include(produto => produto.Farmacia).ToList());
 
-        //GET: api/produto/buscarProduto/{id}
+        //GET: api/produto/buscarProduto/{nome}
         [HttpGet]
         [Route("buscarProduto/{nome}")]
-        public IActionResult GetById([FromRoute] string nomeProduto)
+        public IActionResult GetById([FromRoute] string NomeProduto)
         {
 
-            Produto produto = _context.Produtos.Find(nomeProduto);
+            Produto produto = _context.Produtos.FirstOrDefault(
+                produto => produto.NomeProduto == NomeProduto
+            );
             if (produto == null)
             {
                 return NotFound();
@@ -51,7 +55,7 @@ namespace API.Controllers
         {
             Produto produto = _context.Produtos.FirstOrDefault
             (
-                produto => produto.nomeProduto == nome
+                produto => produto.NomeProduto == nome
             );
             if (produto == null)
             {

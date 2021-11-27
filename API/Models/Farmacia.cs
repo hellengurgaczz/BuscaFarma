@@ -1,14 +1,11 @@
-using System;
-
 namespace API.Models
 {
     public class Farmacia
     {
-
-        public int id { get; set; }
-        public string nomeFarmacia { get; set; }
-        public string enderecoFarmacia { get; set; }
-        public int telefoneFarmacia { get; set; }
+        public int Id { get; set; }
+        public string NomeFarmacia { get; set; }
+        public string EnderecoFarmacia { get; set; }
+        public int TelefoneFarmacia { get; set; }
 
     }
 }

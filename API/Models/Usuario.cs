@@ -1,13 +1,13 @@
-using System;
+using System.Collections.Generic;
 
 namespace API.Models
 {
     public class Usuario
     {
-        public int id { get; set; }
-        public string nomeUsuario { get; set; }
-        public string emailUsuario { get; set; }
-        public string favoritosUsuario { get; set; }
+        public int Id { get; set; }
+        public string NomeUsuario { get; set; }
+        public string EmailUsuario { get; set; }
+        public string FavoritosUsuario { get; set; }
 
     }
 }

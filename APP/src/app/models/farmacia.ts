@@ -1,7 +1,7 @@
 export interface Farmacia {
 
+    id?: number;
     nomeFarmacia: string;
-    idFarmacia:string;
     enderecoFarmacia: string;
     telefoneFarmacia: number;
     

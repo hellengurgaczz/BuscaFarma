@@ -1,8 +1,8 @@
 export interface Usuario {
 
+    id?: number;
     nomeUsuario: string;
-    idUsuario: number;
     emailUsuario: string;
-    favoritosUsuario: {};
+    favoritosUsuario?: [];
     
 }
