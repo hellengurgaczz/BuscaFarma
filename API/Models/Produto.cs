@@ -8,6 +8,7 @@ namespace API.Models
         public double PrecoProduto { get; set; }
         public int DescontoProduto { get; set; }
         public Farmacia Farmacia { get; set; }
+        public int FarmaciaId { get; set; }
 
     }
 }

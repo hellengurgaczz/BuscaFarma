@@ -21,7 +21,7 @@ namespace API.Controllers
 
         public IActionResult Create([FromBody] Produto produto)
         {
-            produto.Farmacia = _context.Farmacias.Find(produto.Farmacia.Id);
+            produto.Farmacia = _context.Farmacias.Find(produto.FarmaciaId);
             _context.Produtos.Add(produto);
             _context.SaveChanges();
             return Created("", produto);
@@ -34,13 +34,14 @@ namespace API.Controllers
 
         //GET: api/produto/buscarProduto/{nome}
         [HttpGet]
-        [Route("buscarProduto/{nome}")]
+        [Route("buscarProduto/{nomeProduto}")]
         public IActionResult GetById([FromRoute] string NomeProduto)
         {
 
-            Produto produto = _context.Produtos.FirstOrDefault(
+            Produto produto = _context.Produtos.FirstOrDefault
+             (
                 produto => produto.NomeProduto == NomeProduto
-            );
+             );
             if (produto == null)
             {
                 return NotFound();
@@ -50,12 +51,12 @@ namespace API.Controllers
 
         //DELETE: api/produto/deletar/
         [HttpDelete]
-        [Route("deletar/{nome}")]
-        public IActionResult Delete([FromRoute] string nome)
+        [Route("deletarProduto/{nomeProduto}")]
+        public IActionResult Delete([FromRoute] string NomeProduto)
         {
             Produto produto = _context.Produtos.FirstOrDefault
             (
-                produto => produto.NomeProduto == nome
+                produto => produto.NomeProduto == NomeProduto
             );
             if (produto == null)
             {
