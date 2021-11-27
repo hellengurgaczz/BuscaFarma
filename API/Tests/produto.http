@@ -25,8 +25,8 @@ Content-Type: application/json
 
 {
     "Id": 2,
-    "NomeProduto": "YazFlex",
-    "PrecoProduto": 72.90
+    "nomeProduto": "YazFlex",
+    "precoProduto": 72.90
 }
 
 ### Deletar produto pelo nome

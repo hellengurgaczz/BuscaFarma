@@ -15,10 +15,10 @@ export class CadastrarProdutoComponent implements OnInit {
 
     nomeProduto!: string;
     idProduto!: number;
+    descricaoProduto!: string;
     precoProduto!: number;
-    formaProduto!: {};
     descontoProduto!: number;
-    nomeFarmacia! : string;
+    farmaciaId!: number;
     
     constructor(private router: Router, private service: ProdutoService){
 
@@ -27,11 +27,11 @@ export class CadastrarProdutoComponent implements OnInit {
 
     cadastrarProduto(): void{
         let produto : Produto = {
-            nomeProduto: this.nomeProduto,
-            precoProduto: this.precoProduto,
-            formaProduto: this.formaProduto,    
-            descontoProduto: this.descontoProduto,
-            nomeFarmacia: this.nomeFarmacia
+            NomeProduto: this.nomeProduto,
+            DescricaoProduto: this.descricaoProduto,
+            PrecoProduto: this.precoProduto,
+            DescontoProduto: this.descontoProduto,
+            FarmaciaId: this.farmaciaId
         }
         this.service.create(produto).subscribe(produto => {
             console.log('Deu certo o cadastro do produto!')
