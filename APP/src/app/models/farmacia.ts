@@ -1,8 +1,8 @@
 export interface Farmacia {
 
-    id?: number;
+    Id?: number;
     nomeFarmacia: string;
-    enderecoFarmacia: string;
-    telefoneFarmacia: number;
+    EnderecoFarmacia: string;
+    TelefoneFarmacia: number;
     
 }
