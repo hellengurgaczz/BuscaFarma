@@ -13,13 +13,14 @@
 
     <select>
         <option value=" Selecione">Ordenar por</option>
-        <option value="Menor preço">Menor preço</option>
+        <option value="Menor preço" routerLink="menorPreco">Menor preço</option>
         <option value="Maior preço">Maior preço</option>
     </select>
 
     <select>
         <option *ngFor="let farmacia of farmacias">{{farmacia.nomeFarmacia}}</option>
     </select>
+
     <select>
         <option *ngFor="let produto of produtos">{{ produto.nomeProduto }}</option>
     </select>

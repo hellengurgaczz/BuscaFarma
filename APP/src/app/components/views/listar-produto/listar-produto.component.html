@@ -1,14 +1,9 @@
-<h3>Todos os produtos</h3>
-
 <ol>
     <li *ngFor="let produto of produtos">
-        {{ produto.id }}
-        {{ produto.nomeProduto }}
-        {{ produto.descricaoProduto }}
-        {{ produto.precoProduto }}
-        {{ produto.descontoProduto }}
-        {{ produto.farmaciaId }}
-        {{ produto.formaProdutoId }}
-
+        <strong>Nome: </strong> {{ produto.nomeProduto }}
+        <strong>Descrição: </strong> {{ produto.descricaoProduto }}
+        <strong>Preço: </strong>{{ produto.precoProduto }}
+        <strong>Desconto: </strong> {{ produto.descontoProduto != 0 ? "Sem desconto" : produto.descontoProduto }}
+        <strong>Forma do produto: </strong> {{ produto.formaProdutoId }}
     </li>
 </ol>

@@ -7,7 +7,8 @@ Content-Type: application/json
     "NomeProduto": "YazFlex",
     "PrecoProduto": 33.5,
     "DescontoProduto": 0,
-    "FarmaciaId": 1 
+    "FarmaciaId": 1 ,
+    "FormaProdutoId": 1
 }
 
 ### Listar produtos

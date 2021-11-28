@@ -32,3 +32,6 @@ div{
     src: url('fonts/stabillo.otf');
 }
 
+a {
+    padding-right: 20px;
+}

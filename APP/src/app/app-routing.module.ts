@@ -4,6 +4,7 @@ import { ListarProdutoComponent } from './components/views/listar-produto/listar
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { componentFactoryName } from '@angular/compiler';
 
 const routes: Routes = [
   {
