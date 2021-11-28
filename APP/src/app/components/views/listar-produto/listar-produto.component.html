@@ -1,9 +1,11 @@
 <ol>
     <li *ngFor="let produto of produtos">
-        <strong>Nome: </strong> {{ produto.nomeProduto }}
-        <strong>Descrição: </strong> {{ produto.descricaoProduto }}
-        <strong>Preço: </strong>{{ produto.precoProduto }}
-        <strong>Desconto: </strong> {{ produto.descontoProduto != 0 ? "Sem desconto" : produto.descontoProduto }}
-        <strong>Forma do produto: </strong> {{ produto.formaProdutoId }}
+        <strong>Nome: </strong> {{ produto.nomeProduto }} |
+        <strong> Descrição: </strong> {{ produto.descricaoProduto }} |
+        <strong> Preço: </strong>{{ produto.precoProduto }} |
+        <strong> Farmácia: </strong>{{ produto.farmaciaId }} |
+        <strong> Desconto: </strong> {{ produto.descontoProduto == 0 ? "Sem desconto" : produto.descontoProduto }} |
+        <strong> Forma do produto: </strong> {{ produto.formaProdutoId }} |
+        <hr>
     </li>
 </ol>

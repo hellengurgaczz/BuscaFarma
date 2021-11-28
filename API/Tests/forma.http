@@ -1,0 +1,11 @@
+### Cadastrar forma
+POST https://localhost:5001/api/produto/forma/cadastrar
+Content-Type: application/json
+
+{
+    "NomeForma": "Comprimido"
+}
+
+### Listar formas
+GET https://localhost:5001/api/produto/forma/listar
+Content-Type: application/json

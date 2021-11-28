@@ -20,7 +20,7 @@
 
     <select>
         <option value=" Selecione">Selecione a farmácia</option>
-        <option *ngFor="let farmacia of farmacias">{{farmacia.nomeFarmacia}}</option>
+        <option *ngFor="let farmacia of farmacias" value="{{farmacia.nomeFarmacia}}">{{farmacia.nomeFarmacia}}</option>
     </select>
 
     <select>
