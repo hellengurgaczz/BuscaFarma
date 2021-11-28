@@ -41,5 +41,6 @@ export class ListarProdutoComponent implements OnInit {
 
     deletarProduto(id: number): void{
         this.produtoService.delete(id);
+        this.router.navigate(["produto/listar"]);
     }
 }
