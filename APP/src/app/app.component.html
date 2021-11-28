@@ -7,8 +7,9 @@
     <a routerLink="/produto/cadastrar">Cadastrar produto</a>
     <a routerLink="/farmacia/cadastrar">Cadastrar farmácia</a><br>
 
-    <!-- <input type="text" name="pesquisaMedicamento" placeholder="Pesquise aqui seu medicamento"> -->
-    <!-- <button routerLink="/produto/listar/{{produto.nomeProduto}}">Pesquisar</button> -->
+    <input type="text" name="pesquisaMedicamento" placeholder="Pesquise aqui seu medicamento">
+
+
     <br>
 
     <select>
@@ -18,11 +19,8 @@
     </select>
 
     <select>
+        <option value=" Selecione">Selecione a farmácia</option>
         <option *ngFor="let farmacia of farmacias">{{farmacia.nomeFarmacia}}</option>
-    </select>
-
-    <select>
-        <option *ngFor="let produto of produtos">{{ produto.nomeProduto }}</option>
     </select>
 
     <select>
