@@ -39,9 +39,7 @@ export class ListarProdutoComponent implements OnInit {
         });
     }
 
-    /*deletarProduto(id): void{
-        this.produtoService.delete(Produto produto).subscribe((produto) => {
-            this.produtoId = id;
-        })
-    }*/
+    deletarProduto(id: number): void{
+        this.produtoService.delete(id);
+    }
 }

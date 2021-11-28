@@ -1,6 +1,6 @@
 <ol>
     <li *ngFor="let produto of produtos">
-        <strong>Nome: </strong> {{ produto.nomeProduto }} |
+        <strong>Nome: </strong> {{ produto.id }} |
         <strong> Descrição: </strong> {{ produto.descricaoProduto }} |
         <strong> Preço: </strong>{{ produto.precoProduto }} |
         <span *ngFor="let farmacia of farmacias"><strong>Farmácia: </strong>{{ farmacia.id === produto.farmaciaId ?
@@ -9,7 +9,7 @@
         <span *ngFor="let formaProduto of formasProduto"><strong>Forma:</strong> {{ formaProduto.id ==
             produto.formaProdutoId ?
             formaProduto.nomeForma : "Forma não cadastrada" }}</span>
-        <button id="deletar"> Deletar produto</button>
+        <button (click)="deletarProduto(produto.id!)" id="deletar">Deletar produto</button>
         <hr>
     </li>
 </ol>

@@ -51,15 +51,13 @@ namespace API.Controllers
             return Ok(produto);
         }
 
-        //DELETE: api/produto/deletar
+        //DELETE: api/produto/deletar/id
         [HttpDelete]
-        [Route("deletarProduto/{nomeProduto}")]
-        public IActionResult Delete([FromRoute] string NomeProduto)
+        [Route("deletarProduto/{id}")]
+        public IActionResult Delete([FromRoute] int id)
         {
-            Produto produto = _context.Produtos.FirstOrDefault
-            (
-                produto => produto.NomeProduto == NomeProduto
-            );
+            Produto produto = _context.Produtos.Find(id);
+
             if (produto == null)
             {
                 return NotFound();

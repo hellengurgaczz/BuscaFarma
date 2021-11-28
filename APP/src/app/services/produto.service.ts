@@ -22,7 +22,7 @@ export class ProdutoService {
     return this.http.post<Produto>(`${this.baseUrl}/cadastrar`, produto)
   } 
 
-  delete(produto : Produto) : Observable<Produto>{
-    return this.http.delete<Produto>(`${this.baseUrl}/deletar/{nome}`)
+  delete(id: number){
+    return this.http.delete<Produto>(`${this.baseUrl}/deletar/${id}`)
   }
 }
