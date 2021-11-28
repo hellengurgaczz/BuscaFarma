@@ -9,6 +9,8 @@ namespace API.Models
         public int DescontoProduto { get; set; }
         public Farmacia Farmacia { get; set; }
         public int FarmaciaId { get; set; }
+        public FormaProduto FormaProduto { get; set; }
+        public int FormaProdutoId { get; set; }
 
     }
 }

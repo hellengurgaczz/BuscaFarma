@@ -6,5 +6,6 @@ export interface Produto {
     PrecoProduto: number;
     DescontoProduto: number;
     FarmaciaId?: number;
+    FormaProdutoId?: number;
 
 }

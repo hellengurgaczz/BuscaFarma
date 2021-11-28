@@ -22,6 +22,7 @@ namespace API.Controllers
         public IActionResult Create([FromBody] Produto produto)
         {
             produto.Farmacia = _context.Farmacias.Find(produto.FarmaciaId);
+            produto.FormaProduto = _context.FormasProduto.Find(produto.FormaProdutoId);
             _context.Produtos.Add(produto);
             _context.SaveChanges();
             return Created("", produto);
@@ -30,7 +31,7 @@ namespace API.Controllers
         //GET: api/produto/listar
         [HttpGet]
         [Route("listar")]
-        public IActionResult List() => Ok(_context.Produtos.Include(produto => produto.Farmacia).ToList());
+        public IActionResult List() => Ok(_context.Produtos.Include(produto => produto.Farmacia).Include(produto => produto.FormaProduto).ToList());
 
         //GET: api/produto/buscarProduto/{nome}
         [HttpGet]

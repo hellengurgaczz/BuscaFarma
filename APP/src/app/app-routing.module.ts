@@ -1,6 +1,5 @@
 import { CadastrarFarmaciaComponent } from './components/views/cadastrar-farmacia/cadastrar-farmacia.component';
 import { CadastrarProdutoComponent } from './components/views/cadastrar-produto/cadastrar-produto.component';
-import { CadastrarUsuarioComponent } from './components/views/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarProdutoComponent } from './components/views/listar-produto/listar-produto.component';
 
 import { NgModule } from '@angular/core';
@@ -14,10 +13,6 @@ const routes: Routes = [
   {
     path: "produto/cadastrar",
     component: CadastrarProdutoComponent
-  },
-  {
-    path: "usuario/cadastrar",
-    component: CadastrarUsuarioComponent
   },
   {
     path: "produto/listar",
