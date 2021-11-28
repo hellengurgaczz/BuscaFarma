@@ -33,12 +33,13 @@ export class CadastrarProdutoComponent implements OnInit {
             DescontoProduto: this.descontoProduto,
             FarmaciaId: this.farmaciaId
         }
+
         this.service.create(produto).subscribe(produto => {
             console.log('Deu certo o cadastro do produto!')
             this.router.navigate(["../../produto/listar"])
         }, (error) => {
             console.log(error)
         })
-    
+
     }
 }

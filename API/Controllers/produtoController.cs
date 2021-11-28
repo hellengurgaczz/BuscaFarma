@@ -27,7 +27,7 @@ namespace API.Controllers
             return Created("", produto);
         }
 
-        //GET: api/listar/produto
+        //GET: api/produto/listar
         [HttpGet]
         [Route("listar")]
         public IActionResult List() => Ok(_context.Produtos.Include(produto => produto.Farmacia).ToList());

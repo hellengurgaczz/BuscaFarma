@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Produto } from 'src/app/models/produto';
+import { ProdutoService } from 'src/app/services/produto.service';
 
 @Component({
     selector: 'app-listar-produto',
@@ -9,7 +11,20 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class ListarProdutoComponent implements OnInit {
+
+    produtos: Produto[] = [];
+    colunasExibidas: String[] = [
+        "nomeProduto",
+        "descricaoProduto",
+        "precoProduto",
+        "descontoProduto"
+    ];
+
+    constructor(private service: ProdutoService) {}
+    
     ngOnInit(): void {
-        throw new Error('Method not implemented.');
+        this.service.list().subscribe((produtos) => {
+            this.produtos = produtos;
+        })
     }
 }

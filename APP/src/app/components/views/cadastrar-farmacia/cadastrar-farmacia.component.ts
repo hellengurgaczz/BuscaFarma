@@ -29,6 +29,13 @@ export class CadastrarFarmaciaComponent implements OnInit {
             EnderecoFarmacia: this.enderecoFarmacia,
             TelefoneFarmacia: this.telefoneFarmacia
         }
+
+        this.service.create(farmacia).subscribe(farmacia => {
+            console.log('Deu certo o cadastro da farmacia!')
+            this.router.navigate(["../../produto/listar"])
+        }, (error) => {
+            console.log(error)
+        })
     }
 }
   

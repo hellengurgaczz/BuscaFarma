@@ -15,7 +15,7 @@ export class ProdutoService {
   constructor(private http: HttpClient) {}
 
   create(produto: Produto) : Observable<Produto>{
-    return this.http.post<Produto>(`${this.baseUrl}/criar`, produto)
+    return this.http.post<Produto>(`${this.baseUrl}/cadastrar`, produto)
   } 
 
   list(): Observable<Produto[]>{

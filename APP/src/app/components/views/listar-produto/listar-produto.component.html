@@ -1,1 +1,11 @@
-<h1>listando</h1>
+<h3>Todos os produtos</h3>
+<ol>
+    <li *ngFor="let produto of produtos">
+        Produto: {{ produto.NomeProduto }} <br>
+        Descricao: {{ produto.DescricaoProduto }} <br>
+        Preço: {{ produto.PrecoProduto}} <br>
+        Desconto: {{ produto.DescontoProduto}} <br>
+        Farmacia: {{ produto.FarmaciaId}}
+        <hr bold="4px" color="rosybrown">
+    </li>
+</ol>
