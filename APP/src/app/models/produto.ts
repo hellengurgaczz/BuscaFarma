@@ -1,3 +1,5 @@
+import { Farmacia } from './farmacia';
+import { FormaProduto } from './formaProduto';
 export interface Produto {
 
     id?: number;
@@ -5,7 +7,9 @@ export interface Produto {
     descricaoProduto: string;
     precoProduto: number;
     descontoProduto: number;
-    farmaciaId?: number;
+    farmacia?: Farmacia;
+    farmaciaId: number;
     formaProdutoId?: number;
+    formaProduto?: FormaProduto;
 
 }

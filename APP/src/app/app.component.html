@@ -9,7 +9,6 @@
 
     <input type="text" name="pesquisaMedicamento" placeholder="Pesquise aqui seu medicamento">
 
-
     <br>
 
     <select>
@@ -25,12 +24,11 @@
 
     <select>
         <option value="Selecione">Selecione a forma</option>
-        <!-- <option *ngFor="let x.forma of x.formas">
-
-        </option> -->
+        <option *ngFor="let formaProduto of formasProduto">
+            {{ formaProduto.nomeForma }}
+        </option>
 
     </select>
-
 
     <br>
 

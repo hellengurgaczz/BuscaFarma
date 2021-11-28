@@ -32,7 +32,7 @@ namespace API.Controllers
         //GET: api/produto/listar
         [HttpGet]
         [Route("listar")]
-        public IActionResult List() => Ok(_context.Produtos.Include(produto => produto.Farmacia).ToList());
+        public IActionResult List() => Ok(_context.Produtos.Include(produto => produto.Farmacia).Include(produto => produto.FormaProduto).ToList());
 
         //GET: api/produto/buscarProduto/{nome}
         [HttpGet]

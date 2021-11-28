@@ -4,6 +4,8 @@ import { ProdutoService } from './services/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from './models/produto';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { FormaProduto } from './models/formaProduto';
+import { FormaProdutoServiceService } from './services/forma-produto-service.service';
 
 @Component({
   selector: 'home-page',
@@ -17,28 +19,24 @@ export class AppComponent implements OnInit{
 
   farmacias: Farmacia[] = [];
 
-  filter: Produto[] = []
+  formasProduto: FormaProduto[] = [];
   
   
-  constructor(private service: ProdutoService, private farmaciaService: FarmaciaService){}
+  constructor(private produtoService: ProdutoService, private farmaciaService: FarmaciaService, private formaProdutoService: FormaProdutoServiceService){}
   
   
   ngOnInit(): void {
-    this.service.list().subscribe(produtos => {
+    this.produtoService.list().subscribe(produtos => {
       this.produtos = produtos;
     })
     
     this.farmaciaService.list().subscribe(farmacias => {
       this.farmacias = farmacias;
     })
-    
-  }
-  filtrando($event: any) {
-    
-    console.log($event)
-    // if(this.produtos.includes('')){
-    //   this.filter = 
-    // }
+
+    this.formaProdutoService.list().subscribe(formasProduto => {
+      this.formasProduto = formasProduto;
+    })
     
   }
 }
