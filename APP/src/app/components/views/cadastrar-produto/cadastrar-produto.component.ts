@@ -1,4 +1,4 @@
-import { FormaProdutoServiceService } from './../../../services/forma-produto-service.service';
+import { FormaProdutoService } from './../../../services/formaProduto.service';
 import { FormaProduto } from './../../../models/formaProduto';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
@@ -22,10 +22,10 @@ export class CadastrarProdutoComponent implements OnInit {
     formasProduto!: FormaProduto[];
     formaProdutoId!: number;
     
-    constructor(private router: Router, private produtoService: ProdutoService, private FormaProdutoServiceService: FormaProdutoServiceService){}
+    constructor(private router: Router, private produtoService: ProdutoService, private formaProdutoService: FormaProdutoService){}
 
     ngOnInit(){
-        this.FormaProdutoServiceService.list().subscribe((formasProduto) => {
+        this.formaProdutoService.list().subscribe((formasProduto) => {
             this.formasProduto = formasProduto;
             console.table(this.formasProduto);
         });

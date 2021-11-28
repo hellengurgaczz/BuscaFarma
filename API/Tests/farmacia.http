@@ -3,7 +3,7 @@ POST https://localhost:5001/api/farmacia/cadastrar
 Content-Type: application/json
 
 {
-    "Id": 1,
+    "Id": 2,
     "NomeFarmacia" : "Nissei",
     "EnderecoFarmacia": "Rua José Loreiro, 100",
     "TelefoneFarmacia": 32868589

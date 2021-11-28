@@ -1,6 +1,11 @@
+import { FormaProdutoService } from './../../../services/formaProduto.service';
+import { FarmaciaService } from './../../../services/farmacia.service';
 import { Component, OnInit } from '@angular/core';
+import { Farmacia } from 'src/app/models/farmacia';
 import { Produto } from 'src/app/models/produto';
 import { ProdutoService } from 'src/app/services/produto.service';
+import { FormaProduto } from 'src/app/models/formaProduto';
+
 
 @Component({
     selector: 'app-listar-produto',
@@ -13,13 +18,24 @@ import { ProdutoService } from 'src/app/services/produto.service';
 export class ListarProdutoComponent implements OnInit {
 
     produtos: Produto[] = [];
+    farmacias: Farmacia[] = [];
+    formasProduto: FormaProduto[] =[];
 
-    constructor(private service: ProdutoService) {}
+    constructor(private produtoService: ProdutoService, private farmaciaService: FarmaciaService, private formaProdutoService: FormaProdutoService) {}
     
     ngOnInit(): void {
-        this.service.list().subscribe((data) => {
-            this.produtos = data;
-            console.log(this.produtos)
+
+        this.produtoService.list().subscribe((produtos) => {
+            this.produtos = produtos;
+        });
+
+        this.farmaciaService.list().subscribe((farmacias) => {
+            this.farmacias = farmacias;
+        });
+
+        this.formaProdutoService.list().subscribe((formasProduto) => {
+            this.formasProduto = formasProduto;
         });
     }
+
 }

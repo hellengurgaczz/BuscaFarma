@@ -3,9 +3,8 @@ import { Farmacia } from 'src/app/models/farmacia';
 import { ProdutoService } from './services/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from './models/produto';
-import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { FormaProduto } from './models/formaProduto';
-import { FormaProdutoServiceService } from './services/forma-produto-service.service';
+import { FormaProdutoService } from 'src/app/services/formaProduto.service';
 
 @Component({
   selector: 'home-page',
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit{
   formasProduto: FormaProduto[] = [];
   
   
-  constructor(private produtoService: ProdutoService, private farmaciaService: FarmaciaService, private formaProdutoService: FormaProdutoServiceService){}
+  constructor(private produtoService: ProdutoService, private farmaciaService: FarmaciaService, private formaProdutoService: FormaProdutoService){}
   
   
   ngOnInit(): void {

@@ -3,9 +3,12 @@
         <strong>Nome: </strong> {{ produto.nomeProduto }} |
         <strong> Descrição: </strong> {{ produto.descricaoProduto }} |
         <strong> Preço: </strong>{{ produto.precoProduto }} |
-        <strong> Farmácia: </strong>{{ produto.farmaciaId }} |
+        <strong *ngFor="let farmacia of farmacias">Farmácia: {{ farmacia.id === produto.farmaciaId ?
+            farmacia.nomeFarmacia : "Farmácia não cadastrada" }}</strong> |
         <strong> Desconto: </strong> {{ produto.descontoProduto == 0 ? "Sem desconto" : produto.descontoProduto }} |
-        <strong> Forma do produto: </strong> {{ produto.formaProdutoId }} |
+        <span *ngFor="let formaProduto of formasProduto"><strong>Forma:</strong> {{ formaProduto.id ==
+            produto.formaProdutoId ?
+            formaProduto.nomeForma : "Forma não cadastrada" }}</span>
         <hr>
     </li>
 </ol>
