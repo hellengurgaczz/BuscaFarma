@@ -10,36 +10,32 @@ import { ProdutoService } from 'src/app/services/produto.service';
 
 })
 
-
 export class CadastrarProdutoComponent implements OnInit {
 
     nomeProduto!: string;
-    idProduto!: number;
     descricaoProduto!: string;
     precoProduto!: number;
     descontoProduto!: number;
     farmaciaId!: number;
     
-    constructor(private router: Router, private service: ProdutoService){
+    constructor(private router: Router, private produtoService: ProdutoService){
 
     }
     ngOnInit(){} 
 
     cadastrarProduto(): void{
         let produto : Produto = {
-            NomeProduto: this.nomeProduto,
-            DescricaoProduto: this.descricaoProduto,
-            PrecoProduto: this.precoProduto,
-            DescontoProduto: this.descontoProduto,
-            FarmaciaId: this.farmaciaId
+            nomeProduto: this.nomeProduto,
+            descricaoProduto: this.descricaoProduto,
+            precoProduto: this.precoProduto,
+            descontoProduto: this.descontoProduto,
+            farmaciaId: this.farmaciaId
         }
 
-        this.service.create(produto).subscribe(produto => {
-            console.log('Deu certo o cadastro do produto!')
-            this.router.navigate(["../../produto/listar"])
-        }, (error) => {
-            console.log(error)
-        })
+        this.produtoService.create(produto).subscribe((produto) => {
+            console.log(produto);
+            this.router.navigate(["produto/listar"]);
+        });
 
     }
 }

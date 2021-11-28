@@ -7,6 +7,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: "",
+    component: ListarProdutoComponent
+  },
+  {
     path: "farmacia/cadastrar",
     component: CadastrarFarmaciaComponent
   },

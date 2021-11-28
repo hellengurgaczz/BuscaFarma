@@ -14,11 +14,11 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) {}
 
-  create(produto: Produto) : Observable<Produto>{
-    return this.http.post<Produto>(`${this.baseUrl}/cadastrar`, produto)
-  } 
-
   list(): Observable<Produto[]>{
     return this.http.get<Produto[]>(`${this.baseUrl}/listar`);
   }
+
+  create(produto: Produto) : Observable<Produto>{
+    return this.http.post<Produto>(`${this.baseUrl}/cadastrar`, produto)
+  } 
 }

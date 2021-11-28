@@ -18,7 +18,8 @@ import { ListarProdutoComponent } from './components/views/listar-produto/listar
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

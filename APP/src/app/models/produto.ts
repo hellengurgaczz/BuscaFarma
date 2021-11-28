@@ -1,11 +1,11 @@
 export interface Produto {
 
-    Id?: number;
-    NomeProduto: string;
-    DescricaoProduto: string;
-    PrecoProduto: number;
-    DescontoProduto: number;
-    FarmaciaId?: number;
-    FormaProdutoId?: number;
+    id?: number;
+    nomeProduto: string;
+    descricaoProduto: string;
+    precoProduto: number;
+    descontoProduto: number;
+    farmaciaId?: number;
+    formaProdutoId?: number;
 
 }

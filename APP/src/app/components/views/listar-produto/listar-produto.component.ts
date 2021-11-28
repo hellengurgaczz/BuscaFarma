@@ -13,18 +13,13 @@ import { ProdutoService } from 'src/app/services/produto.service';
 export class ListarProdutoComponent implements OnInit {
 
     produtos: Produto[] = [];
-    colunasExibidas: String[] = [
-        "nomeProduto",
-        "descricaoProduto",
-        "precoProduto",
-        "descontoProduto"
-    ];
 
     constructor(private service: ProdutoService) {}
     
     ngOnInit(): void {
-        this.service.list().subscribe((produtos) => {
-            this.produtos = produtos;
-        })
+        this.service.list().subscribe((data) => {
+            this.produtos = data;
+            console.log(this.produtos)
+        });
     }
 }

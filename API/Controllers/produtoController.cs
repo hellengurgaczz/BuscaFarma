@@ -22,7 +22,7 @@ namespace API.Controllers
         public IActionResult Create([FromBody] Produto produto)
         {
             produto.Farmacia = _context.Farmacias.Find(produto.FarmaciaId);
-            produto.FormaProduto = _context.FormasProduto.Find(produto.FormaProdutoId);
+            //produto.FormaProduto = _context.FormasProduto.Find(produto.FormaProdutoId);
             _context.Produtos.Add(produto);
             _context.SaveChanges();
             return Created("", produto);

@@ -25,9 +25,9 @@ export class CadastrarFarmaciaComponent implements OnInit {
 
     cadastrarFarmacia(): void {
         let farmacia: Farmacia = {
-            NomeFarmacia: this.nomeFarmacia,
-            EnderecoFarmacia: this.enderecoFarmacia,
-            TelefoneFarmacia: this.telefoneFarmacia
+            nomeFarmacia: this.nomeFarmacia,
+            enderecoFarmacia: this.enderecoFarmacia,
+            telefoneFarmacia: this.telefoneFarmacia
         }
 
         this.service.create(farmacia).subscribe(farmacia => {
