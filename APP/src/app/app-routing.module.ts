@@ -24,7 +24,11 @@ const routes: Routes = [
     component: ListarProdutoComponent
   },
   {
-    path: "produto/deletar",
+    path: "produto/deletar/{id}",
+    component: ListarProdutoComponent
+  },
+  {
+    path: "produto/buscarProduto/{nome}",
     component: ListarProdutoComponent
   }
 ];

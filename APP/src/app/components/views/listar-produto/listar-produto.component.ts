@@ -36,7 +36,8 @@ export class ListarProdutoComponent implements OnInit {
 
         this.formaProdutoService.list().subscribe((formasProduto) => {
             this.formasProduto = formasProduto;
-        });
+        });  
+
     }
 
     deletarProduto(id: number): void{

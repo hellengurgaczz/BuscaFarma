@@ -20,7 +20,6 @@ export class AppComponent implements OnInit{
 
   formasProduto: FormaProduto[] = [];
   
-  
   constructor(private produtoService: ProdutoService, private farmaciaService: FarmaciaService, private formaProdutoService: FormaProdutoService){}
   
   
@@ -36,6 +35,5 @@ export class AppComponent implements OnInit{
     this.formaProdutoService.list().subscribe(formasProduto => {
       this.formasProduto = formasProduto;
     })
-    
   }
 }
