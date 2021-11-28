@@ -5,3 +5,16 @@ ol{
 li{
     list-style: none;
 }
+#deletar{
+    background-color: #ff5232;
+    border-color: #ff5232;
+    margin-left: 20px;
+    font-weight: bold;
+    width: 150px;
+    color: black;
+}
+
+#deletar:hover{
+    background-color: red;
+    border-color: red;
+}

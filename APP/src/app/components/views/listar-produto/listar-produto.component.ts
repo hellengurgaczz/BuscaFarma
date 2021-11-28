@@ -1,10 +1,11 @@
+import { Produto } from './../../../models/produto';
 import { FormaProdutoService } from './../../../services/formaProduto.service';
 import { FarmaciaService } from './../../../services/farmacia.service';
 import { Component, OnInit } from '@angular/core';
 import { Farmacia } from 'src/app/models/farmacia';
-import { Produto } from 'src/app/models/produto';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { FormaProduto } from 'src/app/models/formaProduto';
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -21,7 +22,7 @@ export class ListarProdutoComponent implements OnInit {
     farmacias: Farmacia[] = [];
     formasProduto: FormaProduto[] =[];
 
-    constructor(private produtoService: ProdutoService, private farmaciaService: FarmaciaService, private formaProdutoService: FormaProdutoService) {}
+    constructor(private router: Router,private produtoService: ProdutoService, private farmaciaService: FarmaciaService, private formaProdutoService: FormaProdutoService) {}
     
     ngOnInit(): void {
 
@@ -38,4 +39,9 @@ export class ListarProdutoComponent implements OnInit {
         });
     }
 
+    /*deletarProduto(id): void{
+        this.produtoService.delete(Produto produto).subscribe((produto) => {
+            this.produtoId = id;
+        })
+    }*/
 }
